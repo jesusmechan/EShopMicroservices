@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ordening.Infrastructure\Ordening.Infrastructure.csproj" />
+    <ProjectReference Include="..\OrdeningApplication\Ordening.Application.csproj" />
+  </ItemGroup>
+
 </Project>

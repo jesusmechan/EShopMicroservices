@@ -1,16 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-
-namespace Ordening.Application;
+﻿namespace Ordening.Application;
 
 public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        //services.AddMediatR(cfg =>
-        //{
-        //    cfg.RegisterServicesFromAssembly(assembly.GetExecutingAssembly());
-        //});
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+        });
         return services;
     }
 }

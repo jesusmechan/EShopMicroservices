@@ -1,7 +1,3 @@
-using Ordening.Application;
-using Ordening.Infrastructure;
-using Ordening.API;
-
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -17,7 +13,14 @@ builder.Services
 
 
 var app = builder.Build();
-
-
 //Configure the HTTP request pipeline.
+
+//Ejecutar migraciones
+app.UseApiServices();
+
+if (app.Environment.IsDevelopment()){
+    await app.InitialiseDatabaseAync();
+}
+
+
 app.Run();

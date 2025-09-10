@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿
 
 namespace Ordening.Infrastructure;
 public static class DependencyInjection
@@ -7,11 +6,19 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructureServices
         (this IServiceCollection services, IConfiguration configuration)
     {
-        var settings = configuration.GetConnectionString("Database");
+        var connectionString = configuration.GetConnectionString("OrdeningConnection");
 
         // Add services to the container.
-        //services.AddDbContext<ApplicationDbContext>(options =>
-        //    options.UseSqlServer(settings));
+
+        services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
+        services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
+
+        services.AddDbContext<ApplicationDbContext>((sp,options) =>
+        {
+            //Interceptor para actualizar los campos de auditoría y para eventos del dominio.
+            options.AddInterceptors (sp.GetServices<ISaveChangesInterceptor>()); 
+            options.UseSqlServer(connectionString);
+        });      
 
         //services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 

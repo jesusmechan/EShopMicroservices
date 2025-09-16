@@ -126,7 +126,7 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
             .HasDefaultValue(OrderStatus.Draft)
             .HasConversion(
                 y => y.ToString(),
-                dbStatus => (OrderStatus)Enum.Parse(typeof(Order), dbStatus)
+                dbStatus => (OrderStatus)Enum.Parse(typeof(OrderStatus), dbStatus)
             );
 
         builder.Property(x => x.TotalPrice)

@@ -34,14 +34,14 @@ public class Order : Aggregate<OrderId>
         return order;
     }
 
-    public void Update(Order order, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus status)
+    public void Update(OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus status)
     {
         OrderName = orderName;
         ShippingAddress = shippingAddress;
         BillingAddress = billingAddress;
         Payment = payment;
         Status = status;
-        order.AddDomainEvent(new OrderUpdatedEvent(this));
+        AddDomainEvent(new OrderUpdatedEvent(this));
     }
 
     public void Add(ProductId productId, int quantity, decimal price)

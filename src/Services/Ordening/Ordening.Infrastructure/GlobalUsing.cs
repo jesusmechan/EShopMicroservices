@@ -6,8 +6,11 @@ global using Microsoft.EntityFrameworkCore.Diagnostics;
 
 global using Microsoft.EntityFrameworkCore.ChangeTracking;
 global using Ordening.Domain.Abstractions;
+global using Ordening.Application.Data;
 
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Ordening.Infrastructure.Data;
 global using Ordening.Infrastructure.Data.Configurations.Interceptors;
+
+global using MediatR;

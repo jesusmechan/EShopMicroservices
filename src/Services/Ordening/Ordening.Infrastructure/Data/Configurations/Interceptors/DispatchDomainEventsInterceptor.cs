@@ -1,5 +1,4 @@
-﻿using MediatR;
-
+﻿
 namespace Ordening.Infrastructure.Data.Configurations.Interceptors;
 public class DispatchDomainEventsInterceptor(IMediator mediator) : SaveChangesInterceptor
 {

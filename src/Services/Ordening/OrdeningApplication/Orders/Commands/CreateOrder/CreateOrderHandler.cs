@@ -2,18 +2,42 @@
 public class CreateOrderHandler (IApplicationDbContext dbContext)
     : ICommandHandler<CreateOrderCommand, CreateOrderResult>
 {
+    //public async Task<CreateOrderResult> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
+    //{
+    //    //Create order entity form comand object.
+    //    var order = CreateNewOrder(command.Order);
+
+    //    //Save to database
+    //    dbContext.Orders.Add(order);
+    //    await dbContext.SaveChangesAsync(cancellationToken);
+
+    //    //return result
+    //    return new CreateOrderResult(order.Id.Value);
+    //}
     public async Task<CreateOrderResult> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
     {
-        //Create order entity form comand object.
-        var order = CreateNewOrder(command.Order);
+        try
+        {
+            // Create order entity from command object.
+            var order = CreateNewOrder(command.Order);
 
-        //Save to database
-        dbContext.Orders.Add(order);
-        await dbContext.SaveChangesAsync(cancellationToken);
+            // Save to database
+            dbContext.Orders.Add(order);
+            await dbContext.SaveChangesAsync(cancellationToken);
 
-        //return result
-        return new CreateOrderResult(order.Id.Value);
+            // Return result
+            return new CreateOrderResult(order.Id.Value);
+        }
+        catch (Exception ex)
+        {
+            // Aquí puedes registrar el error (log) o lanzar una excepción personalizada
+            // Ejemplo: logger.LogError(ex, "Error al crear la orden");
+
+            throw new ApplicationException("Ocurrió un error al crear la orden.", ex);
+        }
     }
+
+
 
     private Order CreateNewOrder(OrderDto orderDto)
     {

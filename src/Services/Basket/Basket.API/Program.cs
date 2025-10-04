@@ -1,7 +1,4 @@
-using Discount.Grpc;
-
 var builder = WebApplication.CreateBuilder(args);
-
 //Add services to the container.
 
 
@@ -46,6 +43,7 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     return handler;
 });
 
+builder.Services.AddMessageBroker(builder.Configuration, assembly); //Configuración para rabbitmq
 
 //Cross-Cutting Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();

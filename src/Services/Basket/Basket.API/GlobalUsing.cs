@@ -14,3 +14,9 @@ global using MediatR;
 global using Mapster;
 global using FluentValidation;
 global using Marten;
+global using MassTransit;
+
+global using BuildingBlocks.Messaging.MassTransit;
+global using Discount.Grpc;
+global using Basket.API.Dtos;
+global using BuildingBlocks.Messaging.Events;

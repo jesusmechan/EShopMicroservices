@@ -1,9 +1,12 @@
 ﻿global using Microsoft.Extensions.DependencyInjection;
 global using System.Reflection;
-global using BuildingBlocks.CQRS;
 global using Microsoft.EntityFrameworkCore;
 global using MediatR;
+global using MassTransit;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.FeatureManagement;
 
+global using BuildingBlocks.CQRS;
 global using Ordening.Application.Dtos.Order;
 global using Ordening.Domain.Enums;
 global using Ordening.Domain.Models;
@@ -13,4 +16,6 @@ global using Ordening.Application.Exceptions.Order;
 global using BuildingBlocks.Exceptions;
 global using Microsoft.Extensions.Logging;
 global using Ordening.Domain.Events;
-global using Ordening.Application.Extensions;
+global using Ordening.Application.Extensions; 
+global using BuildingBlocks.Behaviors;
+global using BuildingBlocks.Messaging.MassTransit;

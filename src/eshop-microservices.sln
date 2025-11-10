@@ -51,7 +51,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Application", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Domain", "Services\Security\Security.Domain\Security.Domain.csproj", "{49BD4287-7574-4DC8-8B0A-0514BE9B558C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Infrastrucure", "Services\Security\Security.Infrastrucure\Security.Infrastrucure.csproj", "{E2AF41B4-A0BE-466D-AACC-0D05123C7E32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security.Infrastructure", "Services\Security\Security.Infrastrucure\Security.Infrastructure.csproj", "{E2AF41B4-A0BE-466D-AACC-0D05123C7E32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

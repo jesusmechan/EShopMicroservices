@@ -1,0 +1,1 @@
+﻿public record UserCreatedEvent(User user) : IDomainEvent;

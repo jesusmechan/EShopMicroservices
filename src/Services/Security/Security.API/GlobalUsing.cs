@@ -1,0 +1,11 @@
+﻿global using Security.Infrastrucure.Data.Extensions;
+global using Security.Application;
+global using Security.Infrastrucure;
+global using Security.API;
+global using Security.Domain.Models;
+global using BuildingBlocks.Exceptions.Handler;
+global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using HealthChecks.UI.Client;
+global using Carter;
+global using MediatR;
+global using Mapster;

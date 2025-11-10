@@ -1,5 +1,5 @@
 ﻿namespace Security.Domain.Models;
-public class Profile : Entity<int>
+public class Profile : Aggregate<int>
 {
     //public int ProfileId { get; set; }
     public string Name { get; set; } = string.Empty;

@@ -48,4 +48,9 @@ public class Person : Aggregate<int>
         person.AddDomainEvent(new PersonCreatedEvent(person));
         return person;
     }
+
+    public void Deactivate()
+    {
+        IsActive = false;
+    }
 }

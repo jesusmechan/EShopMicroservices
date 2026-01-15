@@ -1,0 +1,11 @@
+﻿//global using Auth.Infrastructure.Data.Extensions;
+global using Auth.Application;
+global using Auth.Infrastructure;
+global using Auth.API;
+global using Auth.Domain.Models;
+global using BuildingBlocks.Exceptions.Handler;
+global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using HealthChecks.UI.Client;
+global using Carter;
+global using MediatR;
+global using Mapster;
